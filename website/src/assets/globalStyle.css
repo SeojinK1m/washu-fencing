@@ -1,0 +1,23 @@
+:root {
+    --washu-green: rgb(0, 115, 96);
+    --washu-beige: rgb(215, 195, 166);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--washu-green);
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(215, 195, 166);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 1em;
+}
