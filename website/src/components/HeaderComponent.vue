@@ -3,7 +3,7 @@
         <h1>
             WASHU FENCING CLUB
         </h1>
-        <div id="navbar" :class="{'dontShow': notDesktop}">
+        <div id="navbar" :class="{'displayNone' : displayNone}">
             <a href="#FAQ">FAQ</a>
             <a href="#exec">Officers</a>
             <a href="#about-fencing">About Fencing</a>
@@ -14,11 +14,19 @@
 <script>
 export default {
     name: 'HeaderComponent',
-    computed: {
-        notDesktop() {
-            //return this.$(window).width() <= 900
-            return window.innerWidth <= 900
+    data() {
+        return {
+            displayNone: false,
         }
+    },
+    methods: {
+        handleResize() {
+            console.log(window.innerWidth)
+            window.innerWidth <= 900 ? this.displayNone = true : this.displayNone = false
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.handleResize)
     }
 }
 </script>
@@ -52,7 +60,13 @@ export default {
         text-decoration: none;
     }
 
-    .notDesktop {
-        display: none;
+    .displayNone {
+        display: none !important;
+    }
+
+    @media only screen and (max-width: 900px) {
+        #header {
+            width: 80%;
+        }
     }
 </style>

@@ -31,6 +31,7 @@
   <AboutFencing />
 
   <div id="calContainer">
+    <h1>OUR SCHEDULE</h1>
     <iframe src="https://calendar.google.com/calendar/embed?src=d94228a5d992c436b5bbf4410b36fb2d61665390cc114719556137447300b24f%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" frameborder="0" scrolling="no"></iframe>
   </div>
 
@@ -118,7 +119,8 @@ export default {
 
   #about-us-text {
     max-width: 500px;
-    margin: 30px;
+    min-width: 250px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     line-height: 2;
@@ -151,7 +153,10 @@ export default {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
   }
 
   #exec {
@@ -223,7 +228,7 @@ export default {
   @media only screen and (max-width: 900px) {
     iframe {
       width: 80%;
-      height: 100vw;
+      min-height: 40vh;
     }
     #exec {
       width: 80%;
@@ -232,13 +237,23 @@ export default {
       width: 80%;
     }
     #calContent {
-      min-height: 40vh;
+      min-height: 30vh;
     }
     #carouselContainer {
       width: 80%;
     }
     #about {
       justify-content: center;
+      width: 80%;
+      margin-bottom: 5vh;
+    }
+    #about-us-text {
+      max-width: 100%;
+      width: 100%;
+      margin: 0px;
+    }
+    #calContainer {
+      width: 80%;
     }
   }
 </style>
