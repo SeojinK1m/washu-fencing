@@ -15,6 +15,10 @@ h1 {
     color: rgb(215, 195, 166);
 }
 
+h2 {
+    color: var(--washu-green);
+}
+
 p {
     margin: 0;
     padding: 0;

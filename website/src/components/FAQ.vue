@@ -5,37 +5,21 @@
         </div>
         <div class="questionsContainer">
             <!-- Reminder: questions should not have a leading capital letter! -->
-            <Question
-                question = "What is a hackathon?"
-                answer = "A hackathon is an invention marathon where students build software around a central theme. At Hack WashU, you can look forward to amazing prizes, engaging speakers, and tons of skilled mentors!"
-            />
-            <Question
-                FAQQuestion = "When is Hack WashU?"
-                answer = "Hack WashU will start on the evening of October 14, 2022 and end on the morning of the 16th"
+            <FAQQuestion
+                question = "When are fencing practices?"
+                answer = "We meet every Monday and Wednesday from 6-8pm at the South Campus Gym for practices. If you would like the latest updates on fencing practices, please message us through email, Instagram, or the Contact page and we will get back to you as soon as possible."
             />
             <FAQQuestion
-                FAQQuestion = "Who can attend Hack WashU?"
-                answer = "Any college student in the continental United States can attend Hack WashU!"
+                question = "Can I be part of the Exec Board?"
+                answer = "Elections for positions on the team are done every year. If you are a regular member and would like to contribute, don't hesitate to join the race!"
             />
             <FAQQuestion
-                FAQQuestion = "Is Hack WashU in-person?"
-                answer = "Hack WashU will primarily be virtual, but there will be an in-person component for WashU students"
+                question = "I've never fenced before. Are there other fencers like me?"
+                answer = "Absolutely! Our team skill level ranges from beginners to rated, and we will be sure to match you with someone with similar experience. We also have rated fencers who will provide complimentary lessons for those who are interested in improving."
             />
             <FAQQuestion
-                FAQQuestion = "Is Hack WashU free?"
-                answer = "YES!!!"
-            />
-            <FAQQuestion
-                FAQQuestion = "If I can't code, should I still come?"
-                answer = "YES!!! Hack WashU will be an inclusive event for all"
-            />
-            <FAQQuestion
-                FAQQuestion = "Will there be swag?"
-                answer = "YES!!!"
-            />
-            <FAQQuestion
-                FAQQuestion = "I have more FAQQuestions!!"
-                answer = "Feel free to reach out to us at organizer@hackwashu.io!"
+                question = "Is there a chat I can join to get updates?"
+                answer = "We have a groupme (subject to change) where we discuss upcoming events, socials, and practice schedule changes. Please email or dm us on instagram about your interest in joining the group and we will happily add you."
             />
         </div>
     </div>
@@ -77,12 +61,15 @@
         color: white;
         text-align: left;
         margin-bottom: 1vh;
-        margin-left: 20px;
     }
     
     @media only screen and (max-width: 900px) {
         .questionsContainer {
             width: 80%;
+        }
+        .titleContainer {
+            width: 80%;
+            align-self:flex-start;
         }
         #FAQ {
             min-height: 50vh;

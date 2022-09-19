@@ -3,23 +3,29 @@
         <h1>
             WASHU FENCING CLUB
         </h1>
-        <div id="navbar">
-            <a href="">About Fencing</a>
-            <a href="">Officers</a>
-            <a href="">Gallery</a>
+        <div id="navbar" :class="{'dontShow': notDesktop}">
+            <a href="#FAQ">FAQ</a>
+            <a href="#exec">Officers</a>
+            <a href="#about-fencing">About Fencing</a>
         </div>
     </div>
 </template>
   
 <script>
 export default {
-    name: 'HeaderComponent'
+    name: 'HeaderComponent',
+    computed: {
+        notDesktop() {
+            //return this.$(window).width() <= 900
+            return window.innerWidth <= 900
+        }
+    }
 }
 </script>
 
 <style scoped>
     #header {
-        max-width: 1000px;
+        max-width: 900px;
         min-height: 10vh;
         display: flex;
         flex-direction: row;
@@ -38,5 +44,15 @@ export default {
 
     h1 {
         text-align: left;
+    }
+
+    a {
+        margin: 20px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .notDesktop {
+        display: none;
     }
 </style>

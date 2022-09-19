@@ -4,13 +4,29 @@
     <div id="about-us-text">
       <h1>ABOUT US</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Champion athletes aren’t just born - they’re trained, molded, and tested. We sharpen raw talent to maturity with quality teammates, substantive workouts and a true love of the sport. Teamwork, perseverance, sportsmanship - those are the hallmarks of WashU Fencing. Whether you're a competitor or looking for fun, this team fosters a relaxed environment full of weekly fencing, outings, and socials that suit your needs. If you're looking for a place to exercise and socialize, look no further.
       </p>
-      <button id="join-button">
-        JOIN US
-      </button>
+      <a href="https://wustl.presence.io/organization/sports-club-fencing">
+        <button id="join-button">
+          JOIN US
+        </button>
+      </a>
     </div>
   </div>
+<!--
+<div id="carouselContainer">
+    <carousel :items-to-show="{numberToShow}" :wrap-around="true">
+      <slide v-for="slide in 10" :key="slide">
+        <img src="../assets/fencingAbout.jpg" />
+      </slide>
+
+      <template #addons>
+        <navigation />
+        <pagination />
+      </template>
+  </carousel>
+  </div>
+-->
 
   <AboutFencing />
 
@@ -57,20 +73,32 @@ import AboutFencing from "./AboutFencing.vue"
 import ExecMember from "./ExecMember.vue";
 import FAQ from "./FAQ.vue";
 
+import 'vue3-carousel/dist/carousel.css';
+//  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+
 export default {
   components: {
-    AboutFencing,
-    ExecMember,
-    FAQ,
-}
+      AboutFencing,
+      ExecMember,
+      FAQ,
+      //  Carousel,
+      //  Slide,
+      //  Pagination,
+      //  Navigation,
+  },
+  data() {
+    return {
+      numberToShow: 2.5
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   img {
-    width: 300px;
-    height: 400px;
+    width: 330px;
+    height: 440px;
     border-radius: 10px;
   }
 
@@ -82,9 +110,10 @@ export default {
     margin-right: auto;
     text-align: left;
     padding: 20px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-height: 60vh;
+    max-width: 900px;
   }
 
   #about-us-text {
@@ -163,6 +192,34 @@ export default {
     flex-direction: row;
   }
 
+  .carousel__item {
+    min-height: 100px;
+    width: 100%;
+    background-color: var(--washu-beige);
+    color:  var(--vc-clr-white);
+    font-size: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel__slide {
+    padding: 10px;
+  }
+
+  .carousel__prev,x
+  .carousel__next {
+    box-sizing: content-box;
+    border: 5px solid white;
+  }
+
+  #carouselContainer {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   @media only screen and (max-width: 900px) {
     iframe {
       width: 80%;
@@ -173,6 +230,15 @@ export default {
     }
     #faqSection {
       width: 80%;
+    }
+    #calContent {
+      min-height: 40vh;
+    }
+    #carouselContainer {
+      width: 80%;
+    }
+    #about {
+      justify-content: center;
     }
   }
 </style>

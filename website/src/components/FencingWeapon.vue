@@ -1,9 +1,17 @@
 <template>
     <div class="weapon" @click="expanded = !expanded">
-        <h1>{{weaponName}}</h1>
+        <div class="init">
+            <h1>{{weaponName}}</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" :class="{'dontShow':expanded}">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" :class="{'dontShow':!expanded}">
+                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+            </svg>
+        </div>
         <div class="expanded" v-show="expanded" >
             <p class="weapon-description">
-                The épée is a thrusting weapon like the foil, but heavier. In épée, the entire body is a valid target. Like foil, all hits must be with the tip and not the sides of the blade. As the entire body is legal target, there is no concept of an off-target touch, except if the fencer accidentally strikes the floor. Unlike foil and sabre, épée does not use "right of way", simultaneous touches to both fencers, known as “double touches.” However, if the score is tied in a match at the last point and a double touch is scored, the point is null and void.
+                {{weaponDesc}}
             </p>
             <img class="weapon-target" :src="require(`../assets/${weaponName.toLowerCase()}Body.png`)" />
         </div>
@@ -15,10 +23,9 @@
         data() {
             return {
                 expanded: false,
-                imagePath: "../"
             }
         },
-        props: ['weaponName']
+        props: ['weaponName', 'weaponDesc']
     }
   </script>
   
@@ -59,12 +66,35 @@
         height: 200px;
     }
 
+    .init {
+        justify-content: space-between;
+        flex-direction: row;
+        display: inline-flex;
+        align-items: center;
+        width: 91%;
+    }
+
+    .dontShow {
+        display: none;
+    }
+
+    svg {
+        fill: var(--washu-green);
+        width: 20px;
+        height: 20px;
+    }
+
+    path {
+        stroke-width: 1px;
+        stroke: var(--washu-green);
+    }
+
     @media only screen and (max-width: 900px) {
         .weapon {
             margin: 15px 0px;
         }
         .weapon-description {
-            width: 80%;
+            width: 91%;
         }
     }
   </style>
